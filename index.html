@@ -5,7 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<script>
+    /*Función utilizada para llamar el componente de autenticación
+    */
+    function autenticacion(intentos,device, tipoUser, id, name, patronymic, matronymic, ...args) {
+      try{
+        Android.auth(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, name, patronymic, matronymic, args);
+      }catch(e){
+        console.log(e);
+      }
+    }
+</script>
 <body>
   Hello world
+  <button class="btn2 btnVerde" onClick=" enrolamiento(3,'6','1','76380', 'NEIL', 'DEGRASSE', 'TYSON', 2,3,7,8)">
+    Auth Watson Mini</button>
 </body>
 </html>
