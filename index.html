@@ -10,8 +10,7 @@
     */
     function autenticacion(intentos,device, tipoUser, id, name, patronymic, matronymic, ...args) {
       try{      
-       document.write(
-        Android.auth(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, name, patronymic, matronymic, args));
+        Android.auth(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, name, patronymic, matronymic, args);
       }catch(e){
         console.log(e);
       }
