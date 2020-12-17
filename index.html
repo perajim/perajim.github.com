@@ -34,6 +34,7 @@
         respuesta = JSON.parse(event.detail);
   
         document.getElementById("digitaliza").innerHTML = '<div id="digitaliza"></div>';
+        console.log(respuesta)
         document.getElementById("captura").src = `data:imagen/jpeg;base64, ${respuesta.jsonRes[0]}`;
         document.getElementById("capturados").src = `data:imagen/jpeg;base64, ${respuesta.jsonRes[1]}`;
         document.getElementById("mensaje").innerHTML = `<div id="mensaje"> <textarea rows="30" cols="100"> ${JSON.stringify(respuesta, undefined, 2)} <textarea></div>` 
