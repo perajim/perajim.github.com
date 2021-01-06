@@ -3,48 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-   
-  <title>Camarografia</title>
+  <title>Document</title>
 </head>
+<script>
+    /*Función utilizada para llamar el componente de autenticación
+    */
+    function autenticacion(intentos,device, tipoUser, id, name, patronymic, matronymic, ...args) {
+      try{      
+       document.write(
+        Android.auth(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, name, patronymic, matronymic, args));
+      }catch(e){
+        console.log(e);
+      }
+    }
+
+</script>
 <body>
-  estres
-    <div id="digitaliza"></div>
-    <div id="captura"></div>
-    <div id="capturados"></div>
-    <div id="mensaje"></div>
-  
-  
-  <script src="https://www.aforeazteca.com.mx/elementsdancan/elements.js"></script>
-  
-    <script>
-      /**
-      ** ididentificacion
-      ** 1.- identificación cliente
-      ** 4.- Selfie cliente
-      ** 14.- Comprobante domicilio
-      **/
-      document.getElementById("digitaliza").innerHTML = '<custom-digitalizacion-android ididentificacion="14"  ></custom-digitalizacion-android>';
-  
-      const digitalizador = document.querySelector('custom-digitalizacion-android');
-
-      let respuesta = ""
-      digitalizador.addEventListener('action', event => {
-        respuesta = JSON.parse(event.detail);
-  
-        document.getElementById("digitaliza").innerHTML = '<div id="digitaliza"></div>';
-        console.log(respuesta)
-        document.getElementById("captura").src = `data:imagen/jpeg;base64, ${respuesta.jsonRes[0]}`;
-        document.getElementById("capturados").src = `data:imagen/jpeg;base64, ${respuesta.jsonRes[1]}`;
-        document.getElementById("mensaje").innerHTML = `<div id="mensaje"> <textarea rows="30" cols="100"> ${JSON.stringify(respuesta, undefined, 2)} </textarea></div>` 
-        console.log(respuesta)
-      })
-
-      document.write(respuesta)
-  
-      </script>
+  Hello world
+  <button class="btn2 btnVerde" onClick="autenticacion(3,'6','1','88888', '', '', '', 2)">
+    Auth Watson Mini</button>
 </body>
 </html>
-
-
