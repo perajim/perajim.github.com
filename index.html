@@ -9,9 +9,10 @@
     /*Función utilizada para llamar el componente de autenticación
     */
     function autenticacion(intentos,device, tipoUser, id, name, patronymic, matronymic, ...args) {
-      try{      
+      try{ 
+        let yos = document.getElementById('textbox_id').value;
        document.write(
-        Android.auth(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, name, patronymic, matronymic, args));
+        Android.auth(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, let, patronymic, matronymic, args));
       }catch(e){
         console.log(e);
       }
@@ -20,6 +21,8 @@
 </script>
 <body>
   Hello world
+  <input type="text" id="textbox_id">
+  
   <button class="btn2 btnVerde" onClick="autenticacion(3,'6','1','88888', '', '', '', 2)">
     Auth Watson Mini</button>
 </body>
