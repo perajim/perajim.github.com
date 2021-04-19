@@ -20,7 +20,7 @@ xhr.addEventListener("readystatechange", function() {
 
 xhr.open("GET", "https://prod-api.bancoazteca.com:8080/cobranza_credito/investigacion-cobranza/cartografia/catalogos/v1/colonias/detalles?codigoPostal=14000");
 xhr.setRequestHeader("Authorization", "Bearer 3yVWWUSif0OGeeG0fFylCTeWJmPu");
-xhr.withCredentials = true; 
+xhr.withCredentials("true"); 
 xhr.send();
   }
 </script>
