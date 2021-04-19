@@ -7,8 +7,7 @@
 </head>
 <script>
   function llamarXHR(){
-var data = new FormData();
-data.append("codigoPostal", "14000");
+
 
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
@@ -19,10 +18,10 @@ xhr.addEventListener("readystatechange", function() {
   }
 });
 
-xhr.open("GET", "https://prod-api.bancoazteca.com.mx:8080/cobranza_credito/investigacion-cobranza/cartografia/catalogos/v1/colonias/detalles");
-xhr.setRequestHeader("Authorization", "Bearer A8vJ5iEaNmcRegb8MA05D5jAcKwQ");
+xhr.open("GET", "https://prod-api.bancoazteca.com.mx:8080/cobranza_credito/investigacion-cobranza/cartografia/catalogos/v1/colonias/detalles?codigoPostal=14000");
+xhr.setRequestHeader("Authorization", "Bearer 3yVWWUSif0OGeeG0fFylCTeWJmPu");
 
-xhr.send(data);
+xhr.send();
   }
 </script>
 <body>
