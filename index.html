@@ -6,34 +6,30 @@
   <title>Document</title>
 </head>
 <script>
-function Pinger_ping(ip) {
+  function llamarXHR(){
+var data = new FormData();
+data.append("codigoPostal", "14000");
 
-  if(!this.inUse) {
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
-    this.inUse = true;
-   
-    this.ip = ip;
-
-    var _that = this;
-
-    this.img = new Image();
-
-    this.img.onload = function() {_that.good();};
-    this.img.onerror = function() {_that.good();};
-
-    this.start = new Date().getTime();
-    this.img.src = "http://" + ip;
-    this.timer = setTimeout(function() { _that.bad();}, 1500);
-
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
   }
-}
+});
 
+xhr.open("GET", "https://dev-api.bancoazteca.com.mx:8080/cobranza_credito/investigacion-cobranza/cartografia/catalogos/v1/colonias/detalles");
+xhr.setRequestHeader("Authorization", "Bearer A8vJ5iEaNmcRegb8MA05D5jAcKwQ");
+
+xhr.send(data);
+  }
 </script>
 <body>
   Hello world
   <input type="text" id="textbox_id">
   
-   <button class="btn2 btnVerde" onClick="Pinger_ping("10.53.169.23")">
+   <button class="btn2 btnVerde" onClick="llamarXHR()">
     Auth Watson Mini</button>
 </body>
 </html>
