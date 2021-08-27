@@ -8,20 +8,22 @@
 <script>
     /*Función utilizada para llamar el componente de autenticación
     */
-  function autenticacion(intentos,device, tipoUser, numfinges) {
-    try{      
-      window.Android.colleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), parseInt(numfinges));
-    }catch(e){
-      console.log(e);
+    function autenticacion(intentos,device, tipoUser, id, name, patronymic, matronymic, ...args) {
+      try{ 
+        let yos = document.getElementById('textbox_id').value;
+       document.write(
+        Android.authUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), parseInt(id), name, patronymic, matronymic,'01-01-6080-30449', args));
+      }catch(e){
+        console.log(e);
+      }
     }
-  }
 
 </script>
 <body>
   Hello world
   <input type="text" id="textbox_id">
   
-   <button class="btn2 btnVerde" onClick="autenticacion(3,'6','2', '2')">
+   <button class="btn2 btnVerde" onClick="autenticacion(3,'6','2','', '', '', '','01-01-6080-30449', 2)">
     Auth Watson Mini</button>
 </body>
 </html>
