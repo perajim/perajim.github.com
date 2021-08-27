@@ -10,7 +10,7 @@
     */
   function autenticacion(intentos,device, tipoUser, id, numfinges) {
     try{      
-      window.Android.ColleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, numfinges);
+      window.Android.ColleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, parseInt(numfinges));
     }catch(e){
       console.log(e);
     }
@@ -21,7 +21,7 @@
   Hello world
   <input type="text" id="textbox_id">
   
-   <button class="btn2 btnVerde" onClick="autenticacion(3,'6','2', ['01-01-6080-30449', '01-01-6080-30449', '01-01-6080-30449'], '2')">
+   <button class="btn2 btnVerde" onClick="autenticacion(3,'6','2', '2')">
     Auth Watson Mini</button>
 </body>
 </html>
