@@ -8,7 +8,7 @@
 <script>
     /*Función utilizada para llamar el componente de autenticación
     */
-  function autenticacion(intentos,device, tipoUser, id, numfinges) {
+  function autenticacion(intentos,device, tipoUser, numfinges) {
     try{      
       window.Android.colleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, parseInt(numfinges));
     }catch(e){
