@@ -10,7 +10,7 @@
     */
   function autenticacion(intentos,device, tipoUser, id, numfinges) {
     try{      
-      window.Android.authColleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, numfinges);
+      window.Android.ColleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), id, numfinges);
     }catch(e){
       console.log(e);
     }
