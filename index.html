@@ -11,7 +11,7 @@
   function autenticacion(intentos,device, tipoUser, numfinges) {
     const cars = ["1-1-1575-126984", "1-1-6080-30449", "1-1-1575-126986"];
     try{      
-      window.Android.colleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), cars ,parseInt(numfinges));
+      window.Android.colleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser),parseInt(numfinges), "1-1-1575-126984", "1-1-6080-30449", "1-1-1575-126986" );
     }catch(e){
       console.log(e);
     }
