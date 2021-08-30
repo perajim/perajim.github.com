@@ -9,8 +9,9 @@
     /*Función utilizada para llamar el componente de autenticación
     */
   function autenticacion(intentos,device, tipoUser, numfinges) {
+    const cars = ["1-1-1575-126984", "1-1-6080-30449", "1-1-1575-126986"];
     try{      
-      window.Android.colleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser), parseInt(numfinges));
+      window.Android.colleccionUser(parseInt(intentos),parseInt(device), parseInt(tipoUser),  ,parseInt(numfinges));
     }catch(e){
       console.log(e);
     }
